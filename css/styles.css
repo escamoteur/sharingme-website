@@ -1,0 +1,147 @@
+/* Sharing Me Website - Custom Styles */
+
+/* Phone Mockup - iPhone Style */
+.phone-mockup {
+  --phone-width: 260px;
+  --phone-radius: 44px;
+  --bezel: 10px;
+}
+
+@media (min-width: 768px) {
+  .phone-mockup {
+    --phone-width: 290px;
+  }
+}
+
+.phone-frame {
+  width: var(--phone-width);
+  padding: var(--bezel);
+  background: linear-gradient(165deg, #4a4a4f 0%, #3a3a3d 50%, #2d2d30 100%);
+  border-radius: var(--phone-radius);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.phone-notch {
+  width: 90px;
+  height: 28px;
+  background: #1a1a1a;
+  border-radius: 0 0 18px 18px;
+  margin: 0 auto 6px;
+  position: relative;
+}
+
+/* Dynamic Island style pill */
+.phone-notch::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 12px;
+  background: #000;
+  border-radius: 6px;
+}
+
+.phone-screen {
+  border-radius: calc(var(--phone-radius) - var(--bezel));
+  overflow: hidden;
+  background: #000;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Sunset theme variant - dark with pink tint */
+.phone-mockup.sunset .phone-frame {
+  background: linear-gradient(165deg, #5a4a4f 0%, #4a3a3d 50%, #3d2d30 100%);
+  box-shadow:
+    0 25px 50px -12px rgba(229, 115, 115, 0.3),
+    0 0 0 1px rgba(229, 115, 115, 0.2),
+    inset 0 1px 2px rgba(255, 200, 200, 0.15),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Forest theme variant - dark with green tint */
+.phone-mockup.forest .phone-frame {
+  background: linear-gradient(165deg, #4a5a4a 0%, #3a4a3a 50%, #2d3d2d 100%);
+  box-shadow:
+    0 25px 50px -12px rgba(139, 195, 74, 0.3),
+    0 0 0 1px rgba(139, 195, 74, 0.2),
+    inset 0 1px 2px rgba(200, 255, 200, 0.15),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid #0ACCBC;
+  outline-offset: 2px;
+}
+
+/* Hide focus on mouse click, show on keyboard */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Animation for elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Dropdown animation */
+.group:hover .group-hover\:visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0ACCBC;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #09B5A6;
+}
+
+/* Print styles */
+@media print {
+  nav,
+  #download,
+  footer {
+    display: none;
+  }
+}

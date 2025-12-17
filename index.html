@@ -1,543 +1,765 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharing Me - One thought. Every day.</title>
+  <meta name="description" content="A mindful daily journaling app. Write one thought per day and see how far you've come. Share with family, partner, or friends in private circles.">
 
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html">
-        <meta http-equiv="content-language" content="de">
-        <link rel="icon" href="/images/qmd.ico" type="image/x-icon">
-        <title>QuoteMyDay ...Tagebuch war gestern!</title>
-        <meta name="description" content= "Website der App QuoteMyDay">	
-        <meta name="keywords" content="App, Gedanken, Notizen, Tagebuch, Gefühle">
-        <meta name="page-topic" content="">
-        <meta name="robots" content="noindex, nofollow">
-        <meta name="geo.region" content="DE-NW">
-        <meta name="geo.placename" content="Bonn">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-		<link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
-		<script src="./js/jquery.min.js"></script>
-		<link href="./css/theme-style.css" rel='stylesheet' type='text/css' />
-   		 
-        <!-- Custom Theme files -->
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    
-		<!----fonts----->
-   		<link rel="stylesheet" href="fonts/./css/font-awesome.min.css">
-        <link href='https://fonts.googleapis.com/css?family=Alegreya:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Raleway:400,200,200italic,300,300italic,400italic,600,600italic' rel='stylesheet' type='text/css'>
-		
-        <!----kann raus----->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-		
-		
-        <!----start-top-nav-script---->
-		<script>
-			$(function() {
-				var pull 		= $('#pull');
-					menu 		= $('nav ul');
-					menuHeight	= menu.height();
-				$(pull).on('click', function(e) {
-					e.preventDefault();
-					menu.slideToggle();
-				});
-				$(window).resize(function(){
-	        		var w = $(window).width();
-	        		if(w > 320 && menu.is(':hidden')) {
-	        			menu.removeAttr('style');
-	        		}
-	    		});
-			});
-		</script>
-		<!----//End-top-nav-script---->
-    
-        <!----start-slider-script---->
-			<script src="./js/responsiveslides.min.js"></script>
-			 <script>
-			      $(function () {
-			      // Slideshow 4
-			      $("#slider4").responsiveSlides({
-			        auto: true,
-			        pager: false,
-			        nav: true,
-                    timeout: 1000,
-			        speed: 0,
-                    namespace: "callbacks",
-			        before: function () {
-			          $('.events').append("<li>before event fired.</li>");
-			        },
-			        after: function () {
-			          $('.events').append("<li>after event fired.</li>");
-			        }
-			      });
-			
-			    });
-			  </script>
-	<!----END-slider-script---->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sharing Me - One thought. Every day.">
+  <meta property="og:description" content="A mindful daily journaling app. Write one thought per day and see how far you've come.">
+  <meta property="og:image" content="https://sharingme.app/assets/images/logo.png">
+  <meta property="og:url" content="https://sharingme.app">
+  <meta property="og:type" content="website">
 
-			<!---- Slider ------>
-	 <link rel="stylesheet" href="./css/slider.css" type="text/css" />
-	<script type="text/javascript" src="./js/jquery.cslider.js"></script>
-	<script type="text/javascript" src="./js/modernizr.custom.28468.js"></script>
-	<script type="text/javascript">
-			$(function() {
-			
-				$('#da-slider').cslider({
-					autoplay	: true,
-					bgincrement	: 450,
-				});
-			
-			});
-		</script>	
-	
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand': {
+              'teal': '#0ACCBC',
+              'teal-dark': '#09B5A6',
+              'orange': '#F69721',
+              'coral': '#FF6B6B',
+            },
+            'sunset': '#E57373',
+            'forest': '#8BC34A',
+          },
+          fontFamily: {
+            'display': ['Alegreya', 'Georgia', 'serif'],
+            'body': ['Raleway', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Hreflang for i18n -->
+  <link rel="alternate" hreflang="en" href="https://sharingme.app/">
+  <link rel="alternate" hreflang="de" href="https://sharingme.app/de/">
+  <link rel="alternate" hreflang="es" href="https://sharingme.app/es/">
+  <link rel="alternate" hreflang="x-default" href="https://sharingme.app/">
 </head>
-	
-    
-    
-    
-<body>
-     
-       	
-<!-- Intro (Slideshow 4) -->
-			    <div  id="top" class="callbacks_container">
-			      <ul class="rslides" id="slider4">
-			        <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h0>&bdquo;</h0> 
-			         	</div>
-			          </div>
-			        </li>
-			        <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h0>&bdquo;</h0> 
-			         	</div>
-			          </div>
-			        </li>
-			        <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h0>&bdquo;</h0> 
-			         	</div>
-			          </div>
-			        </li>
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h1>Gedachtes.</h1> 
-			         	</div>
-			          </div>
-			        </li>
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1><br>Gemachtes.</h1>
-			         	</div>
-			          </div>
-			        </li>    
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1a>Denkwürdiges.</h1a>
-			         	</div>
-			          </div>
-			        </li>
-			        <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h1a><br>Merkwürdiges.</h1a>
-			         	</div>
-			          </div>
-			        </li>
-                    <!-- li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1> </h1>
-			         	</div>
-			          </div>
-			        </li -->
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1>Gefühltes.</h1>
-			         	</div>
-			          </div>
-			        </li>    
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1a><br>Zerwühltes.</h1a>
-			         	</div>
-			          </div>
-			        </li>
-                    <!-- li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1> </h1>
-			         	</div>
-			          </div>
-			        </li -->
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h1>Gewisses.</h1> 
-			         	</div>
-			          </div>
-			        </li>
-			        <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			          <div class="caption text-center">
-			          	<div class="slide-text-info">
-			          		<h1a><br>Ungewisses.</h1a>
-			         	</div>
-			          </div>
-			        </li>
-                    <!-- li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1> </h1>
-			         	</div>
-			          </div>
-			        </li -->
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1>Sinnliches.</h1>
-			         	</div>
-			          </div>
-			        </li>    
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1a><br>Sinnloses.</h1a>
-			         	</div>
-			          </div>
-			        </li>
-                    <!-- li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1> </h1>
-			         	</div>
-			          </div>
-			        </li -->
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1>Einziges.</h1>
-			         	</div>
-			          </div>
-			        </li>    
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1a><br>Ewiges.</h1a>
-			         	</div>
-			          </div>
-			        </li>
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1>Genießliches.</h1>
-			         	</div>
-			          </div>
-			        </li>    
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1a><br>Verdrießliches.</h1a>
-			         	</div>
-			          </div>
-			        </li>
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1>Gründliches.</h1>
-			         	</div>
-			          </div>
-			        </li>    
-                    <li>
-			          <img src="./images/QMD_head_01.jpg" alt="">
-			           <div class="caption text-center">
-			           	<div class="slide-text-info">
-			          		<h1a><br>Unergründliches.</h1a>
-			         	</div>
-			          </div>
-			        </li>
-			      </ul>
-			    </div>
-			    <div class="clear"> </div>
-<!---- Ende Intro----->
-    
-            
-            
-            
+<body class="font-body text-gray-800 bg-white">
 
-<!-----Was wäre (Features)----->
-		<div id="over" class="features text-center">
-            <div class="col-md-5 features-left">
-					<span> </span>
-				</div>
-			<div class="container">
-				<h2>Was wäre, wenn ...</h2>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2">
+          <img src="assets/images/logo.png" alt="Sharing Me" class="w-10 h-10 rounded-lg">
+          <span class="font-display text-xl font-semibold text-brand-teal">Sharing Me</span>
+        </a>
 
-                <div class="row">
-                <div class="col-md-7 features-right text-justify">
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#features" class="text-gray-600 hover:text-brand-teal transition">Features</a>
+          <a href="#pricing" class="text-gray-600 hover:text-brand-teal transition">Pricing</a>
+          <a href="privacy.html" class="text-gray-600 hover:text-brand-teal transition">Privacy</a>
 
-                <p class="features">
-                ... die kleinen Freuden, die das große Glück ausmachen, nicht mehr in Ihrem Alltag untergingen?<br>
-                ... Sie zurückblicken könnten und wüssten, was Sie vor einem Jahr gefühlt/gedacht/gemacht haben?<br>
-                ... die vielen kleinen Schritte, die Ihnen große Entwicklungen bringen, endlich wahrnehmbar wären?</p>
-            
-                <h4>Jetzt ist all' dies möglich: QuoteMyDay!</h4>
+          <!-- Language Switcher -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-gray-600 hover:text-brand-teal transition">
+              <span>EN</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="absolute right-0 mt-2 w-24 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <a href="/" class="block px-4 py-2 text-sm text-brand-teal font-medium">English</a>
+              <a href="/de/" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-teal">Deutsch</a>
+              <a href="/es/" class="block px-4 py-2 text-sm text-gray-600 hover:text-brand-teal">Espanol</a>
+            </div>
+          </div>
 
-                <p class="features">
-                Halten Sie jeden Tag einen Gedanken, eine Freude, ein Erlebnis fest.<br>
-                Konzentriert auf das Wesentliche, mit max. 144 Zeichen &ndash; quasi als Tweet an Sie selbst &ndash; aber garantiert 100% privat.<br><br>
-                
-                Lesen Sie nach, was Sie gestern/vor einer Woche/einem Monat/einem Jahr gedacht, gefühlt und erlebt haben.          </p>
+          <a href="#download" class="bg-brand-teal text-white px-4 py-2 rounded-full font-medium hover:bg-brand-teal-dark transition">
+            Download
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#features" class="block text-gray-600 hover:text-brand-teal">Features</a>
+        <a href="#pricing" class="block text-gray-600 hover:text-brand-teal">Pricing</a>
+        <a href="privacy.html" class="block text-gray-600 hover:text-brand-teal">Privacy</a>
+        <div class="flex gap-4 pt-2 border-t border-gray-100">
+          <a href="/" class="text-brand-teal font-medium">EN</a>
+          <a href="/de/" class="text-gray-600">DE</a>
+          <a href="/es/" class="text-gray-600">ES</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-brand-teal/5 to-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <!-- Text -->
+        <div class="flex-1 text-center md:text-left">
+          <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight">
+            One thought.<br>
+            Every day.<br>
+            <span class="text-brand-teal">See how far you've come.</span>
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-lg mx-auto md:mx-0">
+            A mindful daily journaling app. Capture one thought per day and watch your life unfold through small moments.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="https://apps.apple.com/app/sharing-me" class="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              <span>App Store</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=app.sharingme" class="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+              </svg>
+              <span>Google Play</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Phone Mockup -->
+        <div class="flex-1 flex justify-center">
+          <div class="phone-mockup">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img src="assets/images/screenshots/en-today-months.png" alt="Sharing Me app showing daily thoughts" class="w-full">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Time Travel Feature -->
+  <section id="features" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
+        <!-- Text -->
+        <div class="flex-1 text-center md:text-left">
+          <span class="inline-block px-3 py-1 bg-brand-teal/10 text-brand-teal text-sm font-medium rounded-full mb-4">
+            Time Travel
+          </span>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-gray-900">
+            See what you wrote weeks, months, years ago
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            The magic happens over time. Swipe through your entries and see what you wrote on this exact day last week, last month, or last year. Watch patterns emerge and see how much you've grown.
+          </p>
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-center gap-3 text-gray-700">
+              <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Last Weeks: 1-4 weeks ago</span>
+            </li>
+            <li class="flex items-center gap-3 text-gray-700">
+              <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Last Months: 1-12 months ago</span>
+            </li>
+            <li class="flex items-center gap-3 text-gray-700">
+              <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Last Years: 1+ years ago</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Visual -->
+        <div class="flex-1 flex justify-center">
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-teal/10 rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-brand-orange/10 rounded-full blur-2xl"></div>
+            <div class="relative bg-white rounded-2xl shadow-xl p-6">
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-3 h-3 rounded-full bg-brand-teal"></div>
+                  <span class="font-display text-lg italic text-gray-700">"Started the new project today!"</span>
                 </div>
-                </div>
-			</div>
-		</div>
-<!-- Ende Was wäre (Features)------>
-    
+                <div class="text-sm text-gray-500 text-right">{ Today }</div>
 
-    
-    
-		<!-----start-Share instantly----->
-		<div id="share" class="Share-instantly">
-			<div class="row">
-				<div class="col-md-5 Share-instantly-left">
-					<span> </span>
-				</div>
-				<div class="col-md-7 Share-instantly-right">
-					<h3>Tagebuch war gestern!</h3>
-					<p class="head-para">
-                    Kein Tagebuch, sondern ein Gedanke pro Tag. Streng limitiert auf 144 Zeichen. Festhalten, was Sie <i>wirklich</i> bewegt.<br><br>
-                    Wenn Sie es mit Tagebuchschreiben versucht, aber – wie wir – nach einer ersten Fleißphase das Handtuch geworfen haben, wenn leere, weiße Seiten Sie abschrecken und Aufsätze noch nie ihr Ding waren, ist QuoteMyDay perfekt für Sie.</p>
-                    <p class="head-para">
-                    Jetzt kostenlos testen!
-					<!----- start-Share-instantly-slider---->
-					 <!-- kann raus
-						<link href="./css/owl.carousel.css" rel="stylesheet">
-					    <script src="./js/owl.carousel.js"></script>
-					    <script>
-						    $(document).ready(function() {
-						      $("#owl-demo , #owl-demo1").owlCarousel({
-						        items : 1,
-						        lazyLoad : true,
-						        autoPlay : true,
-						      });
-						    });
-					    </script>
-					    <script>
-						    $(document).ready(function() {
-						      $("#owl-demo3").owlCarousel({
-						        items : 4,
-						        lazyLoad : true,
-						        autoPlay : true,
-						        navigation: false,
-						        pagination: false,
-						      });
-						    });
-					    </script>
-				 -->
-					     <div class="slider">
-						  	 <div id="da-slider" class="da-slider">
-								<div class="da-slide">
-								  <div class="da-img"><img src="./images/share-slide-pic.png" class="img-responsive" alt=" " /></div>
-								  <div class="slide-text">
-									 <p>Content slider slide text nr. 1.</p>
-								  </div>
-								  <div class="clear"></div>
-								</div>
-								<div class="da-slide">
-								  <div class="da-img"><img src="./images/share-slide-pic.png"   class="img-responsive" alt=" " /></div>
-								  <div class="slide-text">
-									  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-								  </div>
-								  <div class="clear"></div>
-								</div>
-								<div class="da-slide">
-								  <div class="da-img"><img src="./images/share-slide-pic.png"  class="img-responsive" alt=" " /></div>
-								  <div class="slide-text">
-									  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-								  </div>
-								  <div class="clear"></div>
-								</div>
-							 </div>
-						</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-		<div class="clearfix"> </div>
-		<!-----//End-Share instantly----->
-		<!-----start-New Feature------>
-		<div id="fea" class="feature">
-			<div class="container">
-				<div class="col-md-7 feature-left">
-					<h3>QuoteMyDay – supersimpel, supersmart!</h3>
-					<ol class="head-para">
-                      
-                    <li>Eintrag schreiben (max. 144 Zeichen), speichern, fertig!<br>
-                    <li>Horizontal wischen: tageweise vor- und zurückblättern.</li>
-                    <li>Vertikal wischen: wochen-, monats- und jahresweise vor- und zurückblättern.</li>
-                    (Natürlich können Sie auch ganz einfach zu einem bestimmten Datum oder einem zufälligen Datum springen.)
-                    </ol>
-					 <div class="slider">
-						  	 <div id="da-slider1" class="da-slider1">
-								<div class="da-slide">
-								  <div class="da-img"><img src="./images/brush.png" class="img-responsive" alt=" " /></div>
-								  <div class="slide-text">
-									 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
-								  </div>
-								  <div class="clear"></div>
-								</div>
-								<div class="da-slide">
-								  <div class="da-img"><img src="./images/brush.png" class="img-responsive" alt=" " /></div>
-								  <div class="slide-text">
-									 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
-								  </div>
-								  <div class="clear"></div>
-								</div>
-								<div class="da-slide">
-								  <div class="da-img"><img src="./images/brush.png" class="img-responsive" alt=" " /></div>
-								  <div class="slide-text">
-									 <p></p>
-								  </div>
-								  <div class="clear"></div>
-								</div>
-						    </div>
-						</div>
-				</div>
-				<div class="col-md-5 feature-right">
-					 <span> </span>
-				</div>
-			</div>
-		</div>
-		<!-----//End-New Feature------>
-		<!----- start-gallery----->
-		<div id="gall" class="gallery">
-			<div class="container">
-				<h3>QuoteMyDay – supersicher!</h3>
-				<p>Ihre Daten werden da gespeichert, wo sie hingehören: auf Ihrem Gerät!<br>
-                                        Und falls Sie ein Backup auf unseren Servern wünschen, werden die Daten in Deutschland gespeichert und Ende-zu-Ende verschlüsselt, weil Ihre Gedanken nur Ihnen gehören!<br><br>
-                <i>Übrigens: weil wir den Preis für „kostenlose“ Apps – das Ertragen nervtötender Werbung – viel zu hoch finden, gibt es QuoteMyDay zum Preis einer Tasse Kaffees. Fair, oder?</i></p>
-			</div>
-			
-		<!----- //End-gallery----->
-		<!-----start-download---->
-		<div id="down" class="download">
-			<div class="container">
-				<div class="col-md-5 download-left">
-					<a href="#"><span> </span></a>
-				</div>
-				<div class="col-md-7 download-right">
-					<p>Jetzt<br />herunterladen<br />und gratis testen!</p>
-						<ul class="list-unstyled list-inline">
-						<li><a class="l-apple" href="#"><span> </span></a></li>
-						<li><a class="l-google" href="#"><span> </span></a></li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-		<!-----//End-download---->
-		<!----- start-Compatibility----->
-		<div id="comp" class="compatibility">
-			<div class="container">
-				<h3>Compatibility</h3>
-				<div class="compatibility-grids">
-					<div class="col-md-6 compatibility-left">
-						<h4>iOS</h4>
-						<p>Requires iOS 6.0 or later. Compatible with iPhone, iPad, and iPod touch. This app is optimized for iPhone 5.</p>
-						<ul class="list-unstyled list-inline">
-							<li><a class="cl-icon1" href="#"><span> </span></a></li>
-							<li><a class="cl-icon2" href="#"><span> </span></a></li>
-							<li><a class="cl-icon3" href="#"><span> </span></a></li>
-							<li><a class="cl-icon4" href="#"><span> </span></a></li>
-						</ul>
-					</div>
-					<div class="col-md-6 compatibility-right">
-						<h4>Android</h4>
-						<p>Compatible with Android KitKat 4.4 or later.Support for x86 devices (i.e. Samsung Galaxy Tab 3 10.1).</p>
-						<ul class="list-unstyled list-inline">
-							<li><a class="cl-icon1-l" href="#"><span> </span></a></li>
-							<li><a class="cl-icon2-l" href="#"><span> </span></a></li>
-							<li><a class="cl-icon3-l" href="#"><span> </span></a></li>
-							<li><a class="cl-icon4-l" href="#"><span> </span></a></li>
-							<li><a class="cl-icon5-l" href="#"><span> </span></a></li>
-							<li><a class="cl-icon6-l" href="#"><span> </span></a></li>
-							<li><a class="cl-icon7-l" href="#"><span> </span></a></li>
-							<li><a class="cl-icon8-l" href="#"><span> </span></a></li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-		<!----- //End-Compatibility----->
-		<!-----start-footer----->
-		<div class="footer">
-			<div class="container">
-				<div class="col-md-7 footer-left">
-					<p>Template by <a href="http://w3layouts.com/">W3layouts</a></p>
-				</div>
-				<div class="col-md-5 footer-right text-left">
-					<p>Subscribe our email newsletter.</p>
-					<form>
-						<input type="text" value="Your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your email';}">
-						<input type="submit" value="Submit" />
-					</form>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<a href="#top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-			<!---- start-smoth-scrolling---->
-			<script type="text/javascript">
-				$(function() {
-				  $('a[href*=#]:not([href=#])').click(function() {
-				    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			
-				      var target = $(this.hash);
-				      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-				      if (target.length) {
-				        $('html,body').animate({
-				          scrollTop: target.offset().top
-				        }, 1000);
-				        return false;
-				      }
-				    }
-				  });
-					});
-			</script>
-			<!---- //End-smoth-scrolling---->
-		</div>
-		<!-----//End-footer----->
-		<!-----//End-conatiner---->
-	</body>
+                <div class="border-t border-gray-100 pt-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-brand-orange"></div>
+                    <span class="font-display text-lg italic text-gray-700">"Finally finished that book!"</span>
+                  </div>
+                  <div class="text-sm text-gray-500 text-right">{ -1 month }</div>
+                </div>
+
+                <div class="border-t border-gray-100 pt-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-brand-coral"></div>
+                    <span class="font-display text-lg italic text-gray-700">"Feeling grateful for good friends"</span>
+                  </div>
+                  <div class="text-sm text-gray-500 text-right">{ -1 year }</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For You (Personal) -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <!-- Phone Mockup -->
+        <div class="flex-1 flex justify-center">
+          <div class="phone-mockup">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img src="assets/images/screenshots/en-entry.png" alt="Writing a daily thought" class="w-full">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="flex-1 text-center md:text-left">
+          <span class="inline-block px-3 py-1 bg-brand-teal/10 text-brand-teal text-sm font-medium rounded-full mb-4">
+            For You
+          </span>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-gray-900">
+            Your private daily journal
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            No pressure to write paragraphs. Just a few words about your day. Simple, quick, and meaningful.
+          </p>
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-lg bg-brand-teal/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-gray-900">Quick to write</h3>
+                <p class="text-sm text-gray-600">280-500 characters</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-lg bg-brand-teal/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-gray-900">Private notes</h3>
+                <p class="text-sm text-gray-600">Only you can see</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-lg bg-brand-teal/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-gray-900">Scribble</h3>
+                <p class="text-sm text-gray-600">Draw when words aren't enough</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-lg bg-brand-teal/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-medium text-gray-900">Authentic</h3>
+                <p class="text-sm text-gray-600">Locked after midnight</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Couples (Partner) -->
+  <section class="py-16 md:py-24 bg-gradient-to-b from-white to-pink-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
+        <!-- Phone Mockup -->
+        <div class="flex-1 flex justify-center">
+          <div class="phone-mockup sunset">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img src="assets/images/screenshots/en-partner.png" alt="Partner circle showing shared entries" class="w-full">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="flex-1 text-center md:text-left">
+          <span class="inline-block px-3 py-1 bg-sunset/10 text-sunset text-sm font-medium rounded-full mb-4">
+            For Couples
+          </span>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-gray-900">
+            Share your daily moments with your partner
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Create a Partner circle to share daily thoughts with your significant other. See what they're thinking about, celebrate small wins together, and stay connected even on busy days.
+          </p>
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-3 text-gray-700">
+              <svg class="w-5 h-5 text-sunset flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+              </svg>
+              <span>Daily connection without the pressure of long conversations</span>
+            </div>
+            <div class="flex items-center gap-3 text-gray-700">
+              <svg class="w-5 h-5 text-sunset flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Private notes let you keep some thoughts just for yourself</span>
+            </div>
+            <div class="flex items-center gap-3 text-gray-700">
+              <svg class="w-5 h-5 text-sunset flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+              </svg>
+              <span>Look back together and see how your relationship has grown</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Families -->
+  <section class="py-16 md:py-24 bg-gradient-to-b from-white to-green-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <!-- Phone Mockup -->
+        <div class="flex-1 flex justify-center">
+          <div class="phone-mockup forest">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img src="assets/images/screenshots/en-family.png" alt="Family circle showing entries from all family members" class="w-full">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="flex-1 text-center md:text-left">
+          <span class="inline-block px-3 py-1 bg-forest/10 text-forest text-sm font-medium rounded-full mb-4">
+            For Families
+          </span>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-gray-900">
+            Stay connected with your whole family
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Create a Family circle and invite parents, siblings, or kids. See what everyone is up to without endless group chats. Perfect for families spread across different cities.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm">
+              <div class="w-8 h-8 rounded-full bg-forest/20 flex items-center justify-center text-sm font-medium text-forest">Me</div>
+              <span class="text-gray-700">You</span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm">
+              <div class="w-8 h-8 rounded-full bg-forest/20 flex items-center justify-center text-sm font-medium text-forest">S</div>
+              <span class="text-gray-700">Spouse</span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm">
+              <div class="w-8 h-8 rounded-full bg-forest/20 flex items-center justify-center text-sm font-medium text-forest">E</div>
+              <span class="text-gray-700">Emma</span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm">
+              <div class="w-8 h-8 rounded-full bg-forest/20 flex items-center justify-center text-sm font-medium text-forest">L</div>
+              <span class="text-gray-700">Liam</span>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-gray-500">Up to 10 members per circle</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Features -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-block px-3 py-1 bg-brand-teal/10 text-brand-teal text-sm font-medium rounded-full mb-4">
+          More Features
+        </span>
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-gray-900">
+          Everything you need for mindful journaling
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Multiple Circles -->
+        <div class="bg-gray-50 rounded-2xl p-8 text-center">
+          <div class="w-16 h-16 mx-auto bg-brand-teal/10 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-gray-900 mb-3">Multiple Circles</h3>
+          <p class="text-gray-600">
+            Create separate circles for different parts of your life. Personal journals like Reflection, Gratitude, or Ideas - plus partner, family, and close friends. Each with its own theme and members.
+          </p>
+        </div>
+
+        <!-- Custom Themes -->
+        <div class="bg-gray-50 rounded-2xl p-8 text-center">
+          <div class="w-16 h-16 mx-auto bg-brand-orange/10 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-gray-900 mb-3">Custom Color Themes</h3>
+          <p class="text-gray-600">
+            Choose from 6 beautiful preset themes or define your own custom colors. Colors cycle through three shades as you scroll through your entries.
+          </p>
+        </div>
+
+        <!-- Optional Encryption -->
+        <div class="bg-gray-50 rounded-2xl p-8 text-center">
+          <div class="w-16 h-16 mx-auto bg-brand-coral/10 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-brand-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-gray-900 mb-3">Optional Encryption</h3>
+          <p class="text-gray-600 mb-4">
+            Enable end-to-end encryption for any circle. Your thoughts stay private with a shared passphrase only circle members know.
+          </p>
+          <a href="encryption.html" class="inline-flex items-center text-brand-coral hover:underline font-medium">
+            Learn more about encryption
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Themes -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-3 py-1 bg-brand-teal/10 text-brand-teal text-sm font-medium rounded-full mb-4">
+        Customization
+      </span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-gray-900">
+        6 preset themes + custom colors
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Each circle can have its own theme. Choose from 6 beautiful presets or define your own custom colors. Colors cycle through three shades as you scroll.
+      </p>
+
+      <!-- Theme Dots -->
+      <div class="mt-10 flex justify-center gap-4 flex-wrap">
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-6 h-6 rounded-full bg-[#0ACCBC]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#F69721]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#FF6B6B]"></div>
+          </div>
+          <span class="text-sm text-gray-600">Original</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-6 h-6 rounded-full bg-[#2ECC71]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#3498DB]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#2C3E50]"></div>
+          </div>
+          <span class="text-sm text-gray-600">Ocean</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-6 h-6 rounded-full bg-[#FFAB91]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#E57373]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#C2185B]"></div>
+          </div>
+          <span class="text-sm text-gray-600">Sunset</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-6 h-6 rounded-full bg-[#A5D6A7]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#8BC34A]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#D7CCC8]"></div>
+          </div>
+          <span class="text-sm text-gray-600">Forest</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-6 h-6 rounded-full bg-[#CE93D8]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#9C27B0]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#EC407A]"></div>
+          </div>
+          <span class="text-sm text-gray-600">Lavender</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-6 h-6 rounded-full bg-[#90A4AE]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#607D8B]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#455A64]"></div>
+          </div>
+          <span class="text-sm text-gray-600">Monochrome</span>
+        </div>
+      </div>
+
+      <!-- Theme Screenshot -->
+      <div class="mt-10 flex justify-center">
+        <div class="phone-mockup scale-90">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <img src="assets/images/screenshots/en-themes.png" alt="Theme selection screen" class="w-full">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-gray-900">
+          Simple, transparent pricing
+        </h2>
+        <p class="mt-4 text-lg text-gray-600">
+          Start free, upgrade when you're ready to share
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Free -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <h3 class="font-display text-2xl font-semibold text-gray-900">Free</h3>
+          <p class="mt-2 text-gray-600">Perfect for personal journaling</p>
+          <div class="mt-6">
+            <span class="text-4xl font-bold text-gray-900">$0</span>
+            <span class="text-gray-600">/forever</span>
+          </div>
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700">Daily journaling</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700">280 character limit</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700">All 6 color themes</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700">Scribble drawing</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700">Private notes</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700">Works fully offline</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700">Optional daily reminder</span>
+            </li>
+          </ul>
+          <a href="#download" class="mt-8 block w-full text-center py-3 px-6 border-2 border-brand-teal text-brand-teal rounded-xl font-medium hover:bg-brand-teal/5 transition">
+            Get Started Free
+          </a>
+        </div>
+
+        <!-- Premium -->
+        <div class="bg-brand-teal rounded-2xl p-8 shadow-lg relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+            POPULAR
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-white">Premium</h3>
+          <p class="mt-2 text-white/80">Share with family and friends</p>
+          <div class="mt-6">
+            <span class="text-4xl font-bold text-white">$2.99</span>
+            <span class="text-white/80">/month</span>
+          </div>
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white">Everything in Free</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white">500 character limit</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white">Sync across all devices</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white">Web app access</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white">Unlimited circles</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white">Invite family & friends</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white">End-to-end encryption</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-white">Custom daily prompts</span>
+            </li>
+          </ul>
+          <a href="#download" class="mt-8 block w-full text-center py-3 px-6 bg-white text-brand-teal rounded-xl font-medium hover:bg-gray-50 transition">
+            Start Premium
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA -->
+  <section id="download" class="py-16 md:py-24 bg-brand-teal">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <img src="assets/images/logo.png" alt="Sharing Me" class="w-20 h-20 mx-auto rounded-2xl shadow-lg">
+      <h2 class="mt-6 font-display text-3xl md:text-4xl font-semibold text-white">
+        Start your journey today
+      </h2>
+      <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto">
+        One thought. Every day. Your life, one line at a time.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://apps.apple.com/app/sharing-me" class="inline-flex items-center justify-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-xl hover:bg-gray-100 transition shadow-lg">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-xs text-gray-600">Download on the</div>
+            <div class="font-semibold">App Store</div>
+          </div>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=app.sharingme" class="inline-flex items-center justify-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-xl hover:bg-gray-100 transition shadow-lg">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-xs text-gray-600">Get it on</div>
+            <div class="font-semibold">Google Play</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-gray-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <img src="assets/images/logo.png" alt="Sharing Me" class="w-8 h-8 rounded-lg">
+          <span class="font-display text-lg">Sharing Me</span>
+        </div>
+
+        <!-- Links -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+          <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+          <a href="encryption.html" class="hover:text-white transition">Encryption & Security</a>
+          <a href="mailto:hi@sharingme.app" class="hover:text-white transition">Contact</a>
+        </div>
+
+        <!-- Language -->
+        <div class="flex gap-4 text-sm">
+          <a href="/" class="text-white font-medium">EN</a>
+          <a href="/de/" class="text-gray-400 hover:text-white transition">DE</a>
+          <a href="/es/" class="text-gray-400 hover:text-white transition">ES</a>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+        <p>&copy; 2024 Sharing Me. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
 </html>
-

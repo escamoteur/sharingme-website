@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verschlusselung & Sicherheit - Sharing Me</title>
+  <meta name="description" content="Erfahren Sie, wie Sharing Me Ihre Tagebucheintrage mit Ende-zu-Ende-Verschlusselung und gemeinsamen Passwortern schutzt.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand': {
+              'teal': '#0ACCBC',
+              'teal-dark': '#09B5A6',
+              'orange': '#F69721',
+              'coral': '#FF6B6B',
+            },
+          },
+          fontFamily: {
+            'display': ['Alegreya', 'Georgia', 'serif'],
+            'body': ['Raleway', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://sharingme.app/encryption.html">
+  <link rel="alternate" hreflang="de" href="https://sharingme.app/de/encryption.html">
+  <link rel="alternate" hreflang="es" href="https://sharingme.app/es/encryption.html">
+</head>
+<body class="font-body text-gray-800 bg-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="/de/" class="flex items-center gap-2">
+          <img src="../assets/images/logo.png" alt="Sharing Me" class="w-10 h-10 rounded-lg">
+          <span class="font-display text-xl font-semibold text-brand-teal">Sharing Me</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <a href="/de/" class="text-gray-600 hover:text-brand-teal transition">Startseite</a>
+          <a href="privacy.html" class="text-gray-600 hover:text-brand-teal transition">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="pt-24 pb-16 md:pt-32 md:pb-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-display text-4xl md:text-5xl font-semibold text-gray-900">Verschlusselung & Sicherheit</h1>
+      <p class="mt-4 text-gray-600">Wie wir Ihre Gedanken mit Ende-zu-Ende-Verschlusselung schutzen</p>
+
+      <!-- Critical Warning -->
+      <div class="mt-10 bg-red-50 border-l-4 border-red-500 rounded-r-lg p-6">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0">
+            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-display text-xl font-semibold text-red-800">Kritische Warnung: Verlieren Sie Ihr Passwort nicht</h2>
+            <p class="mt-2 text-red-700">
+              <strong>Wenn Sie als Kreisinhaber mit aktivierter Verschlusselung den Zugriff auf Ihre App verlieren, kann das Passwort NICHT wiederhergestellt werden.</strong>
+            </p>
+            <p class="mt-2 text-red-700">
+              Alle verschlusselten Daten im Kreis werden <strong>dauerhaft unzuganglich</strong>. Wir konnen Ihnen nicht helfen, verschlusselte Daten ohne das Passwort wiederherzustellen.
+            </p>
+            <p class="mt-3 text-red-800 font-medium">
+              Wir empfehlen dringend, Ihr Passwort in einem sicheren Passwort-Manager zu speichern.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 prose prose-lg max-w-none">
+        <section class="mb-10">
+          <h2 class="font-display text-2xl font-semibold text-gray-900 mb-4">Wie die Verschlusselung funktioniert</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Wenn Sie die Verschlusselung fur einen Kreis aktivieren, verwendet Sharing Me <strong>Ende-zu-Ende-Verschlusselung</strong> (E2EE), um Ihre Tagebucheintrage zu schutzen. Das bedeutet:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-4">
+            <li>Ihre Eintrage werden <strong>auf Ihrem Gerat</strong> verschlusselt, bevor sie an unsere Server gesendet werden</li>
+            <li>Nur Personen mit dem Passwort konnen die Eintrage entschlusseln und lesen</li>
+            <li>Unsere Server speichern nur verschlusselte Daten - wir konnen Ihre Inhalte nicht lesen</li>
+            <li>Selbst wenn unsere Server kompromittiert wurden, bleiben Ihre Daten unlesbar</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="font-display text-2xl font-semibold text-gray-900 mb-4">Verschlusselung aktivieren</h2>
+          <p class="text-gray-700 leading-relaxed">
+            So aktivieren Sie die Verschlusselung fur einen Kreis:
+          </p>
+          <ol class="list-decimal pl-6 text-gray-700 space-y-3 mt-4">
+            <li>
+              <strong>Kreiseinstellungen offnen:</strong> Tippen Sie auf den Kreisnamen oder gehen Sie zu "Meine Kreise" und tippen Sie auf das Bearbeiten-Symbol des Kreises, den Sie verschlusseln mochten.
+            </li>
+            <li>
+              <strong>Verschlusselung aktivieren:</strong> Schalten Sie den Schalter "Verschlusselung aktiviert" auf EIN.
+            </li>
+            <li>
+              <strong>Passwort speichern:</strong> Ein eindeutiges Passwort wird generiert. <span class="text-red-600 font-medium">Speichern Sie dieses Passwort sicher!</span>
+            </li>
+          </ol>
+
+          <div class="mt-6 bg-gray-50 rounded-xl p-6">
+            <h3 class="font-semibold text-gray-900 mb-3">Screenshot: Verschlusselungseinstellungen</h3>
+            <div class="flex justify-center">
+              <img src="../assets/images/screenshots/en-encryption.png" alt="Kreiseinstellungen mit Verschlusselungsschalter und Augen- und Kopieren-Buttons" class="rounded-lg shadow-md max-w-xs">
+            </div>
+            <p class="text-sm text-gray-600 mt-3 text-center">
+              Der Verschlusselungsschalter mit Symbolen zum Anzeigen (Auge) und Kopieren (Zwischenablage) Ihres Passworts
+            </p>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="font-display text-2xl font-semibold text-gray-900 mb-4">Passwort anzeigen & kopieren</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Wenn Sie Ihr bestehendes Passwort anzeigen oder teilen mussen:
+          </p>
+          <ol class="list-decimal pl-6 text-gray-700 space-y-3 mt-4">
+            <li>Gehen Sie zu den Einstellungen Ihres Kreises (tippen Sie auf den Kreisnamen oder das Bearbeiten-Symbol)</li>
+            <li>Suchen Sie den Schalter "Verschlusselung aktiviert"</li>
+            <li>
+              <strong>Zum Anzeigen:</strong> Tippen Sie auf das <span class="inline-flex items-center gap-1 bg-gray-100 px-2 py-0.5 rounded">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                </svg>
+                Auge-Symbol
+              </span>, um das Passwort anzuzeigen
+            </li>
+            <li>
+              <strong>Zum Kopieren:</strong> Tippen Sie auf das <span class="inline-flex items-center gap-1 bg-gray-100 px-2 py-0.5 rounded">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                Kopieren-Symbol
+              </span>, um das Passwort in die Zwischenablage zu kopieren
+            </li>
+          </ol>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="font-display text-2xl font-semibold text-gray-900 mb-4">Mit Kreismitgliedern teilen</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Wenn Sie jemanden in einen verschlusselten Kreis einladen, benotigt diese Person das Passwort, um Eintrage zu lesen. Sie sollten:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-4">
+            <li>Das Passwort uber einen <strong>sicheren Kanal</strong> teilen (personlich, verschlusselte Nachrichtenapps usw.)</li>
+            <li>Vermeiden, das Passwort uber unverschlusselte E-Mail oder SMS zu senden</li>
+            <li>Erwagen, einen Passwort-Manager mit sicherer Freigabefunktion zu nutzen</li>
+          </ul>
+          <p class="text-gray-700 leading-relaxed mt-4">
+            Jedes Kreismitglied gibt das Passwort einmalig in seiner App ein. Es wird sicher auf dem Gerat fur zukunftige Verwendung gespeichert.
+          </p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="font-display text-2xl font-semibold text-gray-900 mb-4">Was passiert, wenn Sie das Passwort verlieren</h2>
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 mt-4">
+            <h3 class="font-semibold text-amber-800 mb-2">Wichtig: Keine Wiederherstellungsoption</h3>
+            <p class="text-amber-900">
+              Da wir echte Ende-zu-Ende-Verschlusselung verwenden, <strong>haben wir keinen Zugriff auf Ihr Passwort</strong> und konnen es nicht zurucksetzen. Wenn Sie das Passwort verlieren:
+            </p>
+            <ul class="list-disc pl-6 text-amber-900 space-y-2 mt-3">
+              <li>Konnen Sie bestehende verschlusselte Eintrage nicht lesen</li>
+              <li>Andere Kreismitglieder mit dem Passwort haben weiterhin Zugriff auf die Daten</li>
+              <li>Sie konnen die Verschlusselung deaktivieren, aber bestehende verschlusselte Eintrage bleiben unlesbar</li>
+              <li>Neue Eintrage (nach Deaktivierung) werden nicht verschlusselt</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="font-display text-2xl font-semibold text-gray-900 mb-4">Empfehlungen</h2>
+          <div class="grid gap-4 mt-4">
+            <div class="flex items-start gap-4 bg-green-50 rounded-lg p-4">
+              <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <h3 class="font-medium text-green-900">Passwort-Manager verwenden</h3>
+                <p class="text-green-800 text-sm mt-1">Speichern Sie Ihr Passwort in einem seriosen Passwort-Manager wie 1Password, Bitwarden oder Apple Schlusselund.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 bg-green-50 rounded-lg p-4">
+              <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <h3 class="font-medium text-green-900">Backup aufbewahren</h3>
+                <p class="text-green-800 text-sm mt-1">Schreiben Sie das Passwort auf und bewahren Sie es an einem sicheren Ort auf (Bankschliessfach, feuerfester Safe usw.).</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 bg-green-50 rounded-lg p-4">
+              <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <h3 class="font-medium text-green-900">Sicher teilen</h3>
+                <p class="text-green-800 text-sm mt-1">Teilen Sie das Passwort beim Einladen von Mitgliedern personlich oder uber eine verschlusselte Nachrichtenapp.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="font-display text-2xl font-semibold text-gray-900 mb-4">Technische Details</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Fur Interessierte an der technischen Umsetzung:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-4">
+            <li><strong>Algorithmus:</strong> AES-256-GCM Verschlusselung</li>
+            <li><strong>Schlusselableitung:</strong> PBKDF2 mit eindeutigem Salt pro Kreis</li>
+            <li><strong>Passwort:</strong> Kryptografisch zufallig, clientseitig generiert</li>
+            <li><strong>Speicherung:</strong> Passwort im sicheren Geratespeicher (Keychain/Keystore)</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="font-display text-2xl font-semibold text-gray-900 mb-4">Fragen?</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Bei Fragen zu Verschlusselung oder Sicherheit kontaktieren Sie uns unter
+            <a href="mailto:hi@sharingme.app" class="text-brand-teal hover:underline">hi@sharingme.app</a>.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-100 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+          <img src="../assets/images/logo.png" alt="Sharing Me" class="w-8 h-8 rounded-lg">
+          <span class="font-display text-lg text-gray-700">Sharing Me</span>
+        </div>
+        <div class="flex gap-6 text-sm text-gray-600">
+          <a href="/de/" class="hover:text-brand-teal transition">Startseite</a>
+          <a href="privacy.html" class="hover:text-brand-teal transition">Datenschutz</a>
+          <a href="encryption.html" class="text-brand-teal font-medium">Verschlusselung</a>
+        </div>
+        <div class="flex gap-4 text-sm">
+          <a href="/encryption.html" class="text-gray-600 hover:text-brand-teal transition">EN</a>
+          <a href="/de/encryption.html" class="text-brand-teal font-medium">DE</a>
+          <a href="/es/encryption.html" class="text-gray-600 hover:text-brand-teal transition">ES</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
