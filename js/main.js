@@ -1,5 +1,17 @@
 // Sharing Me Website - Main JavaScript
 
+// Store original referrer on first page load (before any internal navigation)
+// This allows us to track where users originally came from even if they browse
+// the landing page before clicking download
+(function() {
+  if (!sessionStorage.getItem('originalReferrer') && document.referrer) {
+    // Only store if referrer is from external site (not sharingme.app)
+    if (!document.referrer.includes('sharingme.app')) {
+      sessionStorage.setItem('originalReferrer', document.referrer);
+    }
+  }
+})();
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -63,6 +75,25 @@ document.addEventListener('DOMContentLoaded', function() {
         nav.classList.add('shadow-md');
       } else {
         nav.classList.remove('shadow-md');
+      }
+    });
+  }
+
+  // Append original referrer to download links for attribution tracking
+  // This preserves where the user came from even if they browse the landing page
+  const originalRef = sessionStorage.getItem('originalReferrer');
+  if (originalRef) {
+    document.querySelectorAll('a[href*="/get"]').forEach(function(link) {
+      try {
+        const url = new URL(link.href);
+        // Only append if we're linking to sharingme.app/get
+        if (url.pathname.startsWith('/get') &&
+            (url.hostname === 'sharingme.app' || url.hostname.endsWith('.sharingme.app'))) {
+          url.searchParams.set('ref', originalRef);
+          link.href = url.toString();
+        }
+      } catch (e) {
+        // Ignore invalid URLs
       }
     });
   }

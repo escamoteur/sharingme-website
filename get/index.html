@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting to Sharing Me...</title>
   <script>
-    // Redirect to web.sharingme.app/get, preserving any path after /get
+    // Redirect to web.sharingme.app/get, preserving path AND query string
     var path = window.location.pathname;
-    var newUrl = 'https://web.sharingme.app' + path;
+    var search = window.location.search;
+    var newUrl = 'https://web.sharingme.app' + path + search;
     window.location.replace(newUrl);
   </script>
   <noscript>
