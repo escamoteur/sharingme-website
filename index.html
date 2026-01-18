@@ -779,5 +779,17 @@
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>
+
+  <!-- Page view tracking -->
+  <script>
+    fetch('https://web.sharingme.app/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        path: location.pathname,
+        referrer: document.referrer || null
+      })
+    }).catch(() => {});
+  </script>
 </body>
 </html>
