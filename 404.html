@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting...</title>
   <script>
-    // Redirect /get/* paths to web.sharingme.app
+    // Redirect /get/* paths to web.sharingme.app, preserving original referrer
     var path = window.location.pathname;
     var search = window.location.search;
 
     if (path.startsWith('/get')) {
-      var newUrl = 'https://web.sharingme.app' + path + search;
+      // Preserve original referrer as ?ref= parameter
+      var ref = document.referrer;
+      var separator = search ? '&' : '?';
+      var refParam = ref ? (separator + 'ref=' + encodeURIComponent(ref)) : '';
+      var newUrl = 'https://web.sharingme.app' + path + search + refParam;
       window.location.replace(newUrl);
     } else {
       // For other 404s, redirect to home

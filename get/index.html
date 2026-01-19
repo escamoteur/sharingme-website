@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting to Sharing Me...</title>
   <script>
-    // Redirect to web.sharingme.app/get, preserving path AND query string
+    // Redirect to web.sharingme.app/get, preserving path, query string, and referrer
     var path = window.location.pathname;
     var search = window.location.search;
-    var newUrl = 'https://web.sharingme.app' + path + search;
+    var ref = document.referrer;
+    var separator = search ? '&' : '?';
+    var refParam = ref ? (separator + 'ref=' + encodeURIComponent(ref)) : '';
+    var newUrl = 'https://web.sharingme.app' + path + search + refParam;
     window.location.replace(newUrl);
   </script>
   <noscript>
