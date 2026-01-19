@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    // Redirect /get/* paths to web.sharingme.app
+    var path = window.location.pathname;
+    var search = window.location.search;
+
+    if (path.startsWith('/get')) {
+      var newUrl = 'https://web.sharingme.app' + path + search;
+      window.location.replace(newUrl);
+    } else {
+      // For other 404s, redirect to home
+      window.location.replace('https://sharingme.app');
+    }
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://sharingme.app">
+  </noscript>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
