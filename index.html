@@ -787,5 +787,21 @@
       referrer: document.referrer || null
     }));
   </script>
+
+  <!-- Forward original referrer on store button clicks -->
+  <script>
+    document.querySelectorAll('a[href*="get/website?store="]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var ref = document.referrer;
+        if (ref) {
+          e.preventDefault();
+          var url = new URL(link.href);
+          url.searchParams.set('ref', ref);
+          window.location.href = url.toString();
+        }
+        // If no referrer, just follow the link normally
+      });
+    });
+  </script>
 </body>
 </html>
