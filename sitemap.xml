@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- English (default) -->
+  <url>
+    <loc>https://sharingme.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sharingme.app/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sharingme.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sharingme.app/es/"/>
+    <lastmod>2026-01-24</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://sharingme.app/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sharingme.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sharingme.app/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sharingme.app/es/privacy.html"/>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://sharingme.app/encryption.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sharingme.app/encryption.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sharingme.app/de/encryption.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sharingme.app/es/encryption.html"/>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- German -->
+  <url>
+    <loc>https://sharingme.app/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sharingme.app/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sharingme.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sharingme.app/es/"/>
+    <lastmod>2026-01-24</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://sharingme.app/de/privacy.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://sharingme.app/de/encryption.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Spanish -->
+  <url>
+    <loc>https://sharingme.app/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sharingme.app/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sharingme.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sharingme.app/es/"/>
+    <lastmod>2026-01-24</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://sharingme.app/es/privacy.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://sharingme.app/es/encryption.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- App download redirect -->
+  <url>
+    <loc>https://sharingme.app/get/</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
